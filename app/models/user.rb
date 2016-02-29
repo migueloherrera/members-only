@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :posts
   before_create :remember
   has_secure_password
   

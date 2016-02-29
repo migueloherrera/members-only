@@ -7,11 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<% if @user == nil %>
-  <%= link_to 'Login', login_path %>
-<% else %>
-  <%= @user.name %>
+<% if logged_in? %>
+  <%= current_user.name %>
   <%= link_to 'Logout', logout_path, method: :delete %>
+<% else %>
+  <%= link_to 'Login', login_path %>
 <% end %>
 
 <%= yield %>
